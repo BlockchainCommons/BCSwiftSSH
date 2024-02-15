@@ -1,16 +1,19 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
 # Contributor License Agreement
 
 Version 1.0
 
-Name: `$name`
+Name: Wolf McNally
 
-E-Mail: `$email`
+E-Mail: wolf@wolfmcnally.com
 
 Legal Jurisdiction: Wyoming, United States of America
 
 Project: https://github.com/BlockchainCommons/BCSwiftSSH
 
-Date: `$date`
+Date: 2014-02-15
 
 ## Purpose
 
@@ -49,7 +52,18 @@ I promise not to offer contributions that contain or depend on the work of other
 ## Disclaimers
 
 ***As far as the law allows, my contributions come as is, without any warranty or condition.  Other than under [Copyright Guarantee](#copyright-guarantee), [Patent Guarantee](#patent-guarantee), or [Open Source Guarantee](#open-source-guarantee), I will not be liable to anyone for any damages related to my contributions or this contributor license agreement, under any kind of legal claim.***
-
----
-
-To sign this Contributor License Agreement, fill in `$name`, `$email`, and `$date` above. Then sign using GPG using the following command `gpg --armor --clearsign --output ./CLA-signed/CLA.YOURGITHUBNAME.YOURGPGFINGERPRINT.asc CLA.md`, then either submit your signed Contributor License Agreement to this repo as a GPG signed Pull Request or email it to [ChristopherA@BlockchainCommons.com](mailto:ChristopherA@BlockchainCommons.com).
+-----BEGIN PGP SIGNATURE-----
+iQIzBAEBCAAdFiEElDZS7jhEF2DD3DU2S2wvz4lHgK4FAmXN36wACgkQS2wvz4lH
+gK5cZxAAhmIhN2J4OdGKm3ArwiyGHPG3vrKiaVOVnDmmjuP9JxtJbklJYCt0One5
+wIM/0wFLpoO4mk50/K1GzgCUZGEotiLssw2tI3WuPed4hJD06VA/Bi77wAkI793l
+UVH2JBy2QggQ3iz5sMpTVHhySwqIQH8islvBPm28fnCo0WF8UdDlBmaAfLitfDua
+fxcmrNtSJ/BzywJ5W4g877UaMB4pD4Zr42RXnnlhI+4uyHqTONJeZC9mSFoNm2mc
+K4sKm/WqxWtidGvoq68rCde/R3DAZ3D3YS5fAKdg0TBPbzgMX4ud4+tKOOrhkFYX
+yYlGvz3NJGylCTUsvzGyms6bBs3M5L7uO2jLWZl3keVSLysd3gjHU+FfeV53BZXS
+jOZ04WUHNRu95OexRU3/jXMzPw88ai+8l1s1SMQJbgoS15dGKU53jlsTbpXgeDlO
+D/0YQRk0iPc2xb71XugJvjqQpKSff/OmQoJya5XC6CzdfJ3mW9Es1WCNRpY1HL+j
+2RP9YR1Ul/7cqHWDi6uv5ji5uQsi6H+Tp+iaar0ABKE1W6r1115AXku1/8qTVJMK
+kutgAIfm/CSTXsKBdMgzeJwdcu1Yc7SHnMp3PjOgh/vvB2gkAuolsACT3Jo9PocP
+9eCNy7hCPisLn4vL8Gl+3rLGqHCbn4Jf8d71ow79PkBh4T4Y58s=
+=XZjI
+-----END PGP SIGNATURE-----

@@ -1,0 +1,68 @@
+{
+  "pins" : [
+    {
+      "identity" : "bcswiftcrypto",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BlockchainCommons/BCSwiftCrypto",
+      "state" : {
+        "revision" : "849b039aebbe23ec63e88bbf27d4b3e0173153f0",
+        "version" : "1.2.1"
+      }
+    },
+    {
+      "identity" : "blake2.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tesseract-one/Blake2.swift.git",
+      "state" : {
+        "revision" : "29c55c8fe42d6661e5a32cc5bbbad1fff64fd01e",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "cryptoswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzyzanowskim/CryptoSwift.git",
+      "state" : {
+        "revision" : "7892a123f7e8d0fe62f9f03728b17bbd4f94df5c",
+        "version" : "1.8.1"
+      }
+    },
+    {
+      "identity" : "secp256k1-zkp.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BlockchainCommons/secp256k1-zkp.swift.git",
+      "state" : {
+        "revision" : "e8f21c7d8d4dd7ac778e51427b908194f3fd9d82",
+        "version" : "0.5.1"
+      }
+    },
+    {
+      "identity" : "swift-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-algorithms.git",
+      "state" : {
+        "revision" : "f6919dfc309e7f1b56224378b11e28bab5bccc42",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics.git",
+      "state" : {
+        "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "wolfbase",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/WolfMcNally/WolfBase",
+      "state" : {
+        "revision" : "91c8cad45e6325ab76db1b5b60c5f6616d52a0cb",
+        "version" : "6.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

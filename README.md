@@ -1,24 +1,43 @@
-# Blockchain Commons `$projectname`
+# Blockchain Commons BCSwiftSSH
 
 <!--Guidelines: https://github.com/BlockchainCommons/secure-template/wiki -->
 
-### _by $major-authors_
+by Wolf McNally, Blockchain Commons
 
-**`$ProjectDescription`** is …
+A Swift package for working with SSH keys and signatures.
 
-## Additional Information
+## Current Functionality
 
-The following files contain…
+- Deserialize and serialize OpenSSH format private and public keys
+    - ed25519, RSA, DSA, ECDSA
+    - No support for keys encrypted with a password yet
+- Extract public key from private key
+    - ed25519, RSA, DSA, ECDSA
+- Generate new keys
+    - ed25519
+- Generate and display key fingerprints
+    - ed25519, RSA, DSA, ECDSA
+    - Formats
+        - strings (SHA-256/Base64 or MD5)
+        - randomart
+            - original text format (String or SwiftUI View)
+            - new graphic format (SwiftUI RandomArtView)
+            - Sample app demonstrating graphic format (RandomArtDemo)
+        - SwiftUI view can toggle between graphic and text
+- Deserialize and serialize OpenSSH format signatures
+    - ed25519
+- Sign and verify signatures
+    - ed25519
+    - Test suite actually runs `ssh-keygen` locally to verify correctness.
 
-* `$ListOfEssentialDocs`
+## Dependencies
 
-## Installation Instructions
-
-## Usage Instructions
+- [BCSwiftCrypto](https://github.com/BlockchainCommons/BCSwiftCrypto)
+    - Currently uses `CryptoKit` for ed25519 key derivation and signing
 
 ## Gordian Principles
 
-` $projectname` is a reference implementation meant to display the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles), which are philosophical and technical underpinnings to Blockchain Commons' Gordian technology. This includes:
+BCSwiftSSH is a reference implementation meant to display the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles), which are philosophical and technical underpinnings to Blockchain Commons' Gordian technology. This includes:
 
 * **Independence.** `how does it demonstrate independence`
 * **Privacy.** `how does it demonstrate privacy`
@@ -31,7 +50,7 @@ Blockchain Commons apps do not phone home and do not run ads. Some are available
 
 ## Status - Alpha
 
-` $projectname`  is currently under active development and in the alpha testing phase. It should not be used for production tasks until it has had further testing and auditing. See [Blockchain Commons' Development Phases](https://github.com/BlockchainCommons/Community/blob/master/release-path.md).
+BCSwiftSSH  is currently under active development and in the alpha testing phase. It should not be used for production tasks until it has had further testing and auditing. See [Blockchain Commons' Development Phases](https://github.com/BlockchainCommons/Community/blob/master/release-path.md).
 
 ### Version History
 
@@ -51,7 +70,7 @@ This table below also establishes provenance (repository of origin, permalink, a
 
 ### Dependencies
 
-To build  `$projectname` you'll need to use the following tools:
+To build  BCSwiftSSH you'll need to use the following tools:
 
 - autotools - Gnu Build System from Free Software Foundation ([intro](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)).
 
@@ -61,7 +80,7 @@ Other prerequisites include:
 
 ### Libraries
 
-The following external libraries are used with `$projectname`:
+The following external libraries are used with BCSwiftSSH:
 
 - [community/repo-name](https://github.com/community/repo-name) — What the library does (use OR fork [version] OR include [version]).
 
@@ -69,7 +88,7 @@ Libraries may be marked as `use` (the current version of the library is used), `
 
 ### Derived from ...
 
-This  `$projectname` project is either derived from or was inspired by:
+This  BCSwiftSSH project is either derived from or was inspired by:
 
 - [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
 
@@ -77,13 +96,13 @@ This  `$projectname` project is either derived from or was inspired by:
 
 ### Adapted by ...
 
-These are adaptations, conversions, and wrappers that make `$projectname` available for other languages:
+These are adaptations, conversions, and wrappers that make BCSwiftSSH available for other languages:
 
 - [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com)(language).
 
 ### Used by ...
 
-These are other projects that directly use `$projectname`:
+These are other projects that directly use BCSwiftSSH:
 
 - [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com)(use OR fork [version] OR include [version]).
 
@@ -91,19 +110,19 @@ Libraries may be marked as `use` (the current version of our repo is used), `for
 
 ### Used with ...
 
-These are other projects that work with or leverage `$projectname`:
+These are other projects that work with or leverage BCSwiftSSH:
 
 - [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
 
 ## Financial Support
 
-`$projectname` is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
+BCSwiftSSH is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
 
-To financially support further development of `$projectname` and other projects, please consider becoming a Patron of Blockchain Commons through ongoing monthly patronage as a [GitHub Sponsor](https://github.com/sponsors/BlockchainCommons). You can also support Blockchain Commons with bitcoins at our [BTCPay Server](https://btcpay.blockchaincommons.com/).
+To financially support further development of BCSwiftSSH and other projects, please consider becoming a Patron of Blockchain Commons through ongoing monthly patronage as a [GitHub Sponsor](https://github.com/sponsors/BlockchainCommons). You can also support Blockchain Commons with bitcoins at our [BTCPay Server](https://btcpay.blockchaincommons.com/).
 
 ### Project Sponsors
 
-Thanks to our project sponsors for their support of `$projectname`:
+Thanks to our project sponsors for their support of BCSwiftSSH:
 
 $sponsor-logo-with-link
 
@@ -121,7 +140,7 @@ The best place to talk about Blockchain Commons and its projects is in our GitHu
 
 [**Gordian User Community**](https://github.com/BlockchainCommons/Gordian/discussions). For users of the Gordian reference apps, including [Gordian Coordinator](https://github.com/BlockchainCommons/iOS-GordianCoordinator), [Gordian Seed Tool](https://github.com/BlockchainCommons/GordianSeedTool-iOS), [Gordian Server](https://github.com/BlockchainCommons/GordianServer-macOS), [Gordian Wallet](https://github.com/BlockchainCommons/GordianWallet-iOS), and [SpotBit](https://github.com/BlockchainCommons/spotbit) as well as our whole series of [CLI apps](https://github.com/BlockchainCommons/Gordian/blob/master/Docs/Overview-Apps.md#cli-apps). This is a place to talk about bug reports and feature requests as well as to explore how our reference apps embody the [Gordian Principles](https://github.com/BlockchainCommons/Gordian#gordian-principles).
 
-[**Blockchain Commons Discussions**](https://github.com/BlockchainCommons/Community/discussions). For developers, interns, and patrons of Blockchain Commons, please use the discussions area of the [Community repo](https://github.com/BlockchainCommons/Community) to talk about general Blockchain Commons issues, the intern program, or topics other than those covered by the [Gordian Developer Community](https://github.com/BlockchainCommons/Gordian-Developer-Community/discussions) or the 
+[**Blockchain Commons Discussions**](https://github.com/BlockchainCommons/Community/discussions). For developers, interns, and patrons of Blockchain Commons, please use the discussions area of the [Community repo](https://github.com/BlockchainCommons/Community) to talk about general Blockchain Commons issues, the intern program, or topics other than those covered by the [Gordian Developer Community](https://github.com/BlockchainCommons/Gordian-Developer-Community/discussions) or the
 [Gordian User Community](https://github.com/BlockchainCommons/Gordian/discussions).
 
 ### Other Questions & Problems
@@ -137,6 +156,7 @@ The following people directly contributed to this repository. You can add your n
 | Name              | Role                | Github                                            | Email                                 | GPG Fingerprint                                    |
 | ----------------- | ------------------- | ------------------------------------------------- | ------------------------------------- | -------------------------------------------------- |
 | Christopher Allen | Principal Architect | [@ChristopherA](https://github.com/ChristopherA) | \<ChristopherA@LifeWithAlacrity.com\> | FDFE 14A5 4ECB 30FC 5D22  74EF F8D3 6C91 3574 05ED |
+| Wolf McNally      | Project Lead        | [@WolfMcNally](https://github.com/wolfmcnally)    | \<Wolf@WolfMcNally.com\>              | 9436 52EE 3844 1760 C3DC  3536 4B6C 2FCF 8947 80AE |
 
 ## Responsible Disclosure
 
