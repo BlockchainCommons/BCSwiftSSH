@@ -1,7 +1,7 @@
 import Foundation
 
 public enum SSHPublicKeyData: Equatable, CustomStringConvertible {
-    case rsa(exponent: Data, modulus: Data)
+    case rsa(publicExponent: Data, modulus: Data)
     case dsa(p: Data, q: Data, g: Data, y: Data)
     case ecdsa(subtype: ECDSAType, data: Data)
     case ed25519(Data)
@@ -10,9 +10,9 @@ public enum SSHPublicKeyData: Equatable, CustomStringConvertible {
         let keyData: SSHPublicKeyData
         switch type {
         case .rsa:
-            let exponent = try buf.readChunk()
+            let publicExponent = try buf.readChunk()
             let modulus = try buf.readChunk()
-            keyData = .rsa(exponent: exponent, modulus: modulus)
+            keyData = .rsa(publicExponent: publicExponent, modulus: modulus)
         case .dsa:
             let p = try buf.readChunk()
             let q = try buf.readChunk()
@@ -51,8 +51,8 @@ public enum SSHPublicKeyData: Equatable, CustomStringConvertible {
     
     public var chunks: [Data] {
         switch self {
-        case .rsa(let exponent, let modulus):
-            [exponent, modulus]
+        case .rsa(let publicExponent, let modulus):
+            [publicExponent, modulus]
         case .dsa(let p, let q, let g, let y):
             [p, q, g, y]
         case .ecdsa(let type, let data):
@@ -64,8 +64,8 @@ public enum SSHPublicKeyData: Equatable, CustomStringConvertible {
 
     public var description: String {
         switch self {
-        case .rsa(let exponent, let modulus):
-            "(exponent: \(exponent.hex), modulus: \(modulus.hex))"
+        case .rsa(let publicExponent, let modulus):
+            "(publicExponent: \(publicExponent.hex), modulus: \(modulus.hex))"
         case .dsa(let p, let q, let g, let y):
             "(p: \(p.hex), q: \(q.hex), g: \(g.hex), y: \(y.hex))"
         case .ecdsa(_, let data):
@@ -79,8 +79,8 @@ public enum SSHPublicKeyData: Equatable, CustomStringConvertible {
         var buf = SSHWriteBuffer()
         buf.writeLengthPrefixedString(type.description)
         switch self {
-        case .rsa(let exponent, let modulus):
-            buf.writeChunks([exponent, modulus])
+        case .rsa(let publicExponent, let modulus):
+            buf.writeChunks([publicExponent, modulus])
         case .dsa(let p, let q, let g, let y):
             buf.writeChunks([p, q, g, y])
         case .ecdsa(let type, let data):

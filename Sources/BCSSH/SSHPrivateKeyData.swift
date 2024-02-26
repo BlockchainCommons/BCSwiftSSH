@@ -3,9 +3,10 @@ import WolfBase
 import BCCrypto
 
 // https://coolaj86.com/articles/the-openssh-private-key-format/
+// https://github.com/openssh/openssh-portable/blob/master/ssh-rsa.c
 
 public enum SSHPrivateKeyData: Equatable, CustomStringConvertible {
-    case rsa(modulus: Data, exponent: Data, d1: Data, d2: Data, d3: Data, d4: Data)
+    case rsa(modulus: Data, publicExponent: Data, privateExponent: Data, prime1: Data, prime2: Data, coefficient: Data)
     case dsa(Data)
     case ecdsa(type: ECDSAType, data: Data)
     case ed25519(privateKey: Data, publicKey: Data)
@@ -35,12 +36,12 @@ public enum SSHPrivateKeyData: Equatable, CustomStringConvertible {
                 throw SSHPrivateKey.Error.invalid
             }
             let modulus = try buf.readChunk()
-            let exponent = try buf.readChunk()
-            let d1 = try buf.readChunk()
-            let d2 = try buf.readChunk()
-            let d3 = try buf.readChunk()
-            let d4 = try buf.readChunk()
-            keyData = .rsa(modulus: modulus, exponent: exponent, d1: d1, d2: d2, d3: d3, d4: d4)
+            let publicExponent = try buf.readChunk()
+            let privateExponent = try buf.readChunk()
+            let prime1 = try buf.readChunk()
+            let prime2 = try buf.readChunk()
+            let coefficient = try buf.readChunk()
+            keyData = .rsa(modulus: modulus, publicExponent: publicExponent, privateExponent: privateExponent, prime1: prime1, prime2: prime2, coefficient: coefficient)
         case .dsa:
             let x = try buf.readChunk()
             keyData = .dsa(x)
@@ -81,8 +82,8 @@ public enum SSHPrivateKeyData: Equatable, CustomStringConvertible {
     
     public var chunks: [Data] {
         switch self {
-        case .rsa(let modulus, let exponent, let d1, let d2, let d3, let d4):
-            [modulus, exponent, d1, d2, d3, d4]
+        case .rsa(let modulus, let publicExponent, let privateExponent, let prime1, let prime2, let coefficient):
+            [modulus, publicExponent, privateExponent, prime1, prime2, coefficient]
         case .dsa(let x):
             [x]
         case .ecdsa(let type, let data):
@@ -94,8 +95,8 @@ public enum SSHPrivateKeyData: Equatable, CustomStringConvertible {
     
     public var description: String {
         switch self {
-        case .rsa(let modulus, let exponent, let d1, let d2, let d3, let d4):
-            "(modulus: \(modulus.hex), exponent: \(exponent.hex), d1: \(d1.hex), d2: \(d2.hex), d3: \(d3.hex), d4: \(d4.hex))"
+        case .rsa(let modulus, let publicExponent, let privateExponent, let prime1, let prime2, let coefficient):
+            "(modulus: \(modulus.hex), publicExponent: \(publicExponent.hex), privateExponent: \(privateExponent.hex), prime1: \(prime1.hex), prime2: \(prime2.hex), coefficient: \(coefficient.hex))"
         case .dsa(let x):
             x.hex
         case .ecdsa(_, let data):

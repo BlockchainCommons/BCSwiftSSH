@@ -27,7 +27,7 @@ final class PublicKeyTests: XCTestCase {
     
     func testRSAPublicKey() throws {
         let key = try SSHPublicKey(rsaPublicKey)
-        XCTAssertEqual(key.description, "SSHPublicKey(type: ssh-rsa, keyData: (exponent: 010001, modulus: 00991cfbb8f5b5e6c56fb5b0f77e4c416ae3dbd25012bcb3c5c8918f638141484420d13d41e351e80a503e2bac33650c999816a22a8ef7028924aa3691677956216f8fb2a341b5b2bc4379982f3e9a1da30462f31a79a9ac2c1645fe7254e51b4e1275b15de88d01555a9ea3910aaea46c129038ff9d29d19101151dc3e9f813d87fcf269387d620975d840ab9292a65d95f6f3c2f08c8348ab9117115da0b03f41fd39dd96c0c21eb5fc7936061829f246cff7e0189a01012fd174e241d6346f48ac0b13fd4aaf2fb8c4496e95b170acbdc4013450d5cd7a7dc3ac68c9adb10799e0fe4a3b468b04be58d847f57024fcc52a95c7fd8b5e52fc6716ed148e952cf), comment: wolf@Wolfs-MacBook-Pro.local)")
+        XCTAssertEqual(key.description, "SSHPublicKey(type: ssh-rsa, keyData: (publicExponent: 010001, modulus: 00991cfbb8f5b5e6c56fb5b0f77e4c416ae3dbd25012bcb3c5c8918f638141484420d13d41e351e80a503e2bac33650c999816a22a8ef7028924aa3691677956216f8fb2a341b5b2bc4379982f3e9a1da30462f31a79a9ac2c1645fe7254e51b4e1275b15de88d01555a9ea3910aaea46c129038ff9d29d19101151dc3e9f813d87fcf269387d620975d840ab9292a65d95f6f3c2f08c8348ab9117115da0b03f41fd39dd96c0c21eb5fc7936061829f246cff7e0189a01012fd174e241d6346f48ac0b13fd4aaf2fb8c4496e95b170acbdc4013450d5cd7a7dc3ac68c9adb10799e0fe4a3b468b04be58d847f57024fcc52a95c7fd8b5e52fc6716ed148e952cf), comment: wolf@Wolfs-MacBook-Pro.local)")
         XCTAssertEqual(key.string, rsaPublicKey)
         XCTAssertEqual(key.hashString(), "2048 SHA256:Ft/TLHhhrJUunfYdyeEDMHFfNWHtLTnQc1VHUQ1kH58 wolf@Wolfs-MacBook-Pro.local (RSA)")
         XCTAssertEqual(key.randomArt(),
